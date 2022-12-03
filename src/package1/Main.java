@@ -1,6 +1,9 @@
 package package1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Main {
 
@@ -20,26 +23,36 @@ public class Main {
 		int generation = 1;
 		while(generation <= 10) {
 
+			System.out.println("Generation: " + generation );
+
 			Individual[] parents = selection(p);
 
 			Individual[] children = crossover(parents);
 
-			Individual[] mutatedChildren = mutate(children);
+//			Individual[] mutatedChildren = children;
 
-			for (Individual i: mutatedChildren) {
-				int fitness = Fitness.calculateFitness(i);
-				if (fitness == 100){
-					System.out.println(i);
-					return;
-				}
-			}
+//			for (Individual i: children) {
+//				int fitness = Fitness.calculateFitness(i);
+//				if (fitness == 0){
+//					System.out.println(Arrays.toString(i.chromosome)+" "+i.fitnessScore);
+//					return;
+//				}
+//			}
 
-			p.kill(mutatedChildren.length);
+			p.kill(children.length);
 
-			p.add(mutatedChildren);
+			p.add(children);
+
+			Fitness.calculateFitness(p);
+
+			p.printPopulation();
 
 			generation++;
+			System.out.println("Population Fitness: " + p.populationFitness);
+			System.out.println("--------------------------------------------------------");
+
 		}
+	System.out.println("END");
 	}
 
 	public static Individual[] selection(Population aPopulation){
@@ -47,15 +60,22 @@ public class Main {
 		ArrayList<Integer> selectedParentsIndex = new ArrayList<>();
 		Individual[] selectedParents = new Individual[4];
 
+		// RANDOM SELECTION
 		int i=0;
 		int candidateParentIndex = -1;
 		while(i<4) {
 			candidateParentIndex = (int)(Math.random()*10);
-			if(selectedParentsIndex.indexOf(candidateParentIndex) != -1) {
+			if(!selectedParentsIndex.contains(candidateParentIndex)) {
 				selectedParents[i] = aPopulation.population.get(i);
+				selectedParentsIndex.add(candidateParentIndex);
 				i++;
 			}
 		}
+
+
+//		//ELITE SELECTION
+//		Collections.sort(aPopulation.population);
+
 
 		return selectedParents;
 	}
@@ -64,7 +84,7 @@ public class Main {
 
 		Individual[] children = new Individual[4];
 
-		for(int i=0; i<3; i++) {
+		for(int i=0; i<2; i++) {
 			int a1 = theParents[i].chromosome[0];
 			int a2 = theParents[i+2].chromosome[0];
 			int b1 = theParents[i+2].chromosome[1];
@@ -83,9 +103,9 @@ public class Main {
 		return children;
 	}
 
-	public static Individual[] mutate(Individual[] theChildren){
-		return null;
-	}
+//	public static Individual[] mutate(Individual[] theChildren){
+//		return null;
+//	}
 
 }
 

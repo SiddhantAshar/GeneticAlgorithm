@@ -12,7 +12,7 @@ public class Fitness {
 
         int LHS = a+b+c+d;
 
-        int score = 100 - Math.abs(RHS - LHS);
+        int score = Math.abs(RHS - LHS);
 
         aIndividual.setFitnessScore(score);
 
@@ -22,7 +22,10 @@ public class Fitness {
     public static int calculateFitness(Population aPopulation){
         int total = 0;
         for(Individual i: aPopulation.population){
-            total += calculateFitness(i);
+            int s = calculateFitness(i);
+            if(s == 0)
+                aPopulation.stopGeneration = 1;
+            total += s;
         }
         total = total/aPopulation.population.size();
         aPopulation.setPopulationFitness(total);
