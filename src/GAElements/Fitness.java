@@ -1,4 +1,7 @@
-package package1;
+package GAElements;
+
+import GAElements.Individual;
+import GAElements.Population;
 
 public class Fitness {
 
@@ -10,7 +13,7 @@ public class Fitness {
         int c = aIndividual.chromosome[2];
         int d = aIndividual.chromosome[3];
 
-        int LHS = a+b+c+d;
+        int LHS = 2*a+3*b-(c*c)+d;
 
         int score = Math.abs(RHS - LHS);
 
@@ -24,7 +27,7 @@ public class Fitness {
         for(Individual i: aPopulation.population){
             int s = calculateFitness(i);
             if(s == 0)
-                aPopulation.stopGeneration = 1;
+                aPopulation.stopGeneration = true;
             total += s;
         }
         total = total/aPopulation.population.size();

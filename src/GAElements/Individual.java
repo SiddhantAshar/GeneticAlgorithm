@@ -1,10 +1,10 @@
-package package1;
+package GAElements;
 
 public class Individual {
-    int [] chromosome = new int[4];
+    public int [] chromosome = new int[4];
     int fitnessScore = 0;
 
-    Individual(int a, int b, int c, int d) {
+    public Individual(int a, int b, int c, int d) {
         chromosome[0] = a;
         chromosome[1] = b;
         chromosome[2] = c;
