@@ -3,24 +3,25 @@ package GAMain;
 
 import GAElements.Fitness;
 import GAElements.Population;
-import GAStore.GANaiveStore;
-import GAStore.GAStore;
+import GACreator.GANaiveCreator;
+import GACreator.GACreator;
 
 public class Main {
 
 	public static void main(String[] args) {
 
 		Population population = Population.getInstance();
+
 		population.generateRandomPopulation(20);
 		Fitness.calculateFitness(population);
 
-		GAStore gaNaiveStore = new GANaiveStore();
-		GeneticAlgorithm geneticAlgorithm = gaNaiveStore.createGeneticAlgorithm();
+		GACreator gaNaiveCreator = new GANaiveCreator();
+		GeneticAlgorithm geneticAlgorithm = gaNaiveCreator.createGeneticAlgorithm();
 
 		int generation = 1;
 		while (generation <= 100) {
 			System.out.println("Generation: "+generation);
-			geneticAlgorithm.getNextGeneration(population);
+			geneticAlgorithm.generateNextGeneration(population);
 			Fitness.calculateFitness(population);
 
 			population.printPopulation();

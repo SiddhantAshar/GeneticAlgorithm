@@ -9,15 +9,16 @@ import SelectionOperators.ISelection;
 import SelectionOperators.SelectionElite;
 import SelectionOperators.SelectionRandom;
 
-public class GANaiveOperatorFactory implements IGAOperatorFactory {
+public class GAOptimisedFactory implements IGAOperatorFactory {
     /**
      * The class {@code GANaiveOperatorFactory} contains methods for performing basic
      * {@param a, @param b}
+     *
      */
 
     @Override
     public ISelection getSelectionOperator() {
-        return new SelectionElite();
+        return new SelectionRandom();
     }
 
     @Override
