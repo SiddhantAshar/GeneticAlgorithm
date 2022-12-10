@@ -1,7 +1,7 @@
 package GAMain;
 
 
-import GAElements.Fitness;
+import GAElements.Individual;
 import GAElements.Population;
 import GACreator.GANaiveCreator;
 import GACreator.GARandomCreator;
@@ -10,29 +10,44 @@ import GACreator.GACreator;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		int generationThreashhold = 10;
 
 		Population population = Population.getInstance();
 
 		population.generateRandomPopulation(20);
-		Fitness.calculateFitness(population);
+//		Fitness.calculateFitness(population);
 
 		GACreator gaCreator = new GANaiveCreator();
 		GeneticAlgorithm geneticAlgorithm = gaCreator.createGeneticAlgorithm();
 
 		int generation = 1;
-		while (generation <= 10) {
+		while (generation <= generationThreashhold) {
 			System.out.println("Generation: "+generation);
 			geneticAlgorithm.generateNextGeneration(population);
-			Fitness.calculateFitness(population);
 
 			population.printPopulation();
 			System.out.println("Population Fitness: " + population.populationFitness);
 			System.out.println("--------------------------------------------------------");
-			if (population.stopGeneration)
-				return;
+ 			if (geneticAlgorithm.stopAlgorithm)
+				break;
 
 			generation++;
 		}
+		
+		System.out.println("=================== S O L U T I O N =====================");
+		
+		Individual fittestIndividual = population.population.get(0);
+		if(fittestIndividual.getFitnessScore() == 0) {
+			System.out.println("Perfect solution found.");
+			System.out.println("Solution found at generation: " + generation);
+		} else {
+			System.out.println("Perfect solution not found.");
+		}
+		System.out.println("Fittest Individual: \n" + fittestIndividual);
+		
+		System.out.println("=========================================================");
+		
 
 	}
 

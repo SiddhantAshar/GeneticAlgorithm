@@ -6,33 +6,35 @@ import java.util.Random;
 
 public class Population {
     public ArrayList <Individual> population = new ArrayList<>();
-    public int populationFitness = 0;
-    public boolean stopGeneration = false;
 
-    public static Population getInstance() {
-        return Population.SingletonHelper._instance;
-    }
-
+	public int populationFitness = -1;
+    
+    private Population() {}
 
     private static class SingletonHelper{
         private static final Population _instance = new Population();
     }
 
-
-    public void generateRandomPopulation(int aSize){
-        Random r = new Random();
-        for(int i=0; i<aSize; i++) {
-            int a = r.nextInt(51);
-            int b = r.nextInt(51);
-            int c = r.nextInt(51);
-            int d = r.nextInt(51);
-
-            population.add(new Individual(a,b,c,d));
-        }
+    public static Population getInstance() {
+        return Population.SingletonHelper._instance;
     }
-
+    
+    public ArrayList<Individual> getPopulation() {
+		return population;
+	}
+    
     public void setPopulationFitness(int aFitness){
         populationFitness = aFitness;
+    }
+    
+	public int getPopulationFitness() {
+		return populationFitness;
+	}
+
+    public void generateRandomPopulation(int aSize){
+        for(int i=0; i<aSize; i++) {
+            population.add(Individual.getRandomIndividual());
+        }
     }
 
     public void kill(int aSize){
@@ -65,7 +67,5 @@ public class Population {
             System.out.println(i);
         }
     }
-
-
 
 }

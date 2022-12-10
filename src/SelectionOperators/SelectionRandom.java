@@ -16,7 +16,7 @@ public class SelectionRandom implements ISelection {
         while(i<4) {
             candidateParentIndex = (int)(Math.random()*10);
             if(!selectedParentsIndex.contains(candidateParentIndex)) {
-                selectedParents[i] = aPopulation.population.get(i);
+                selectedParents[i] = aPopulation.getPopulation().get(candidateParentIndex);
                 selectedParentsIndex.add(candidateParentIndex);
                 i++;
             }

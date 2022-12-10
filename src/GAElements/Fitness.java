@@ -26,8 +26,7 @@ public class Fitness {
         int total = 0;
         for(Individual i: aPopulation.population){
             int s = calculateFitness(i);
-            if(s == 0)
-                aPopulation.stopGeneration = true;
+            
             total += s;
         }
         total = total/aPopulation.population.size();
