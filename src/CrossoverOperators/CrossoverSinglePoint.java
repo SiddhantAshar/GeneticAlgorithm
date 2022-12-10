@@ -11,8 +11,10 @@ public class CrossoverSinglePoint implements ICrossover{
 
 	/**
 	 * The function {@code getChildren} contains logic for generating new children by alternate crossover between
-	 * the parents.Consider a1 a2,b1 b2,c1 c2,d1 d2 as parents.
-	 * So in alternate crossover we will have children from parents a1 b1,c2 d2, a2 b2,a2 b1,c1 d1
+	 * the parents.Consider p1, p2 as parents with chromosomes p1 = [a1, b1, c1, d1] and p2 = [a2, b2, c2, d2].
+	 * A single point crossover will break parents chromosome in two parts and the children will have one part
+	 * from each parent. The single point crossover will give children c1 and c2 from parents p1 and p2 as
+	 * c1 = [a1, b1, c2, d2] and c2 = [a2, b2, c1, d1].
 	 * {@param theParents} of type individual array.
 	 * @returns children of the type individual array.
 	 *

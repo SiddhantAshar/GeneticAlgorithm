@@ -1,13 +1,14 @@
+
 package GAOperatorFactory;
 
-import CrossoverOperators.CrossoverRandom;
+import CrossoverOperators.CrossoverSinglePoint;
 import CrossoverOperators.ICrossover;
 import MutatationOperators.IMutation;
 import MutatationOperators.MutationRandom;
 import SelectionOperators.ISelection;
-import SelectionOperators.SelectionRandom;
+import SelectionOperators.SelectionTournament;
 
-public class GARandomFactory implements IGAOperatorFactory {
+public class GAOptimisedOperatorFactory implements IGAOperatorFactory {
     /**
      * The class {@code GANaiveOperatorFactory} contains methods for performing basic
      * {@param a, @param b}
@@ -16,12 +17,12 @@ public class GARandomFactory implements IGAOperatorFactory {
 
     @Override
     public ISelection getSelectionOperator() {
-        return new SelectionRandom();
+        return new SelectionTournament();
     }
 
     @Override
     public ICrossover getCrossoverOperator() {
-        return new CrossoverRandom();
+        return new CrossoverSinglePoint();
     }
 
     @Override
