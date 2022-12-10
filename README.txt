@@ -1,31 +1,31 @@
 1. How to compile and run the code
-	As we have multiple-package & multiple-file structure, the compilation process involves multiple steps.
+    As we have multiple-package & multiple-file structure, the compilation process involves multiple steps.
 
-	(((Step 1)) )
-		From the terminal, navigate to the folder the project folder where the src/ folder is located.
+    (((Step 1)) )
+        From the terminal, navigate to the folder the project folder where the src/ folder is located.
 
-	(((Step 2)))
-		Based on the OS, run the commands mentioned below for code compilation only
+    (((Step 2)))
+        Based on the OS, run the commands mentioned below for code compilation only
 
-		For Windows:
-			dir *.java /s /b > tmp.txt
-			javac @tmp.txt -d bin
-			del tmp.txt
+        For Windows:
+            dir *.java /s /b > tmp.txt
+            javac @tmp.txt -d bin
+            del tmp.txt
 
-		For Unix
-			javac -d bin/ $(find . -type f -name "*.java")
+            For Unix
+                javac -d bin/ $(find . -type f -name "*.java")
 
-	(((Step 3)))
-		For executing the code, run the commands below
+    (((Step 3)))
+        For executing the code, run the commands below
 
-	For Windows:
-		java -classpath bin\ GAMain.Main
+        For Windows:
+            java -classpath bin\ GAMain.Main
 
-	For Unix:
-		java -classpath bin/ GAMain.Main
+        For Unix:
+            java -classpath bin/ GAMain.Main
 
-	The program should now execute and the solution should be printed on the terminal.
-	The same commands have been included in the "unix_compile_and_run.sh" and "windows_compile_and_run.bat" for the respective OS and can be run through the terminal.
+        The program should now execute and the solution should be printed on the terminal.
+        The same commands have been included in the "unix_compile_and_run.sh" and "windows_compile_and_run.bat" for the respective OS and can be run through the terminal.
 
 2. Terminologies Used
     # Individual
@@ -104,9 +104,18 @@
 
     c.  __factory pattern__
 
-        # Where it can be found?
-        # Pattern implemented name
-        # Why this pattern is used
+        # The implementaion of the Factory Pattern can be found in GeneticAlgorithm class in the src/GAMain/GeneticAlgorithm.java file.
+		
+        # Abstract factory pattern has been used as we need to create a family of related objects. 
+		
+        # In the case of Genetic Algorithm, the objects that we are creating are the Operators for the algorithm.
+          The interface IGAOperatorFactory declares what each GAOperatorFactory should do. Thus, we have 3 types of operator factories- 
+          GANaiveOperatorFactory, GARandomOperatorFactory and GAOptimisedOperatorFactory that provide different set operators for the
+          genetic algorithm.
+          The client-programmer just needs to instantiate a different GACreator object that will provide the different OperatorFactory.
+          Thus, providing a completely different behavior by changing a single line of code.
+		  
+          See: Documentation for GACreator, GAOperatorFactory, SelectionOperators, CrossoverOperators, MutationOperators.
 
 
 5. Additional Information
