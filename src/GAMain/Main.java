@@ -4,6 +4,7 @@ package GAMain;
 import GAElements.Fitness;
 import GAElements.Population;
 import GACreator.GANaiveCreator;
+import GACreator.GARandomCreator;
 import GACreator.GACreator;
 
 public class Main {
@@ -15,11 +16,11 @@ public class Main {
 		population.generateRandomPopulation(20);
 		Fitness.calculateFitness(population);
 
-		GACreator gaNaiveCreator = new GANaiveCreator();
-		GeneticAlgorithm geneticAlgorithm = gaNaiveCreator.createGeneticAlgorithm();
+		GACreator gaCreator = new GANaiveCreator();
+		GeneticAlgorithm geneticAlgorithm = gaCreator.createGeneticAlgorithm();
 
 		int generation = 1;
-		while (generation <= 100) {
+		while (generation <= 10) {
 			System.out.println("Generation: "+generation);
 			geneticAlgorithm.generateNextGeneration(population);
 			Fitness.calculateFitness(population);
@@ -32,8 +33,6 @@ public class Main {
 
 			generation++;
 		}
-
-
 
 	}
 

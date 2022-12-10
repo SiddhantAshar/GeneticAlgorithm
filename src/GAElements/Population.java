@@ -62,7 +62,7 @@ public class Population {
 
     public void printPopulation(){
         for (Individual i:population) {
-            System.out.println(Arrays.toString(i.chromosome) + " Score: " + i.fitnessScore);
+            System.out.println(i);
         }
     }
 

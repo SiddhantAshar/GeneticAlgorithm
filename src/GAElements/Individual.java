@@ -1,5 +1,7 @@
 package GAElements;
 
+import java.util.Arrays;
+
 public class Individual {
     public int [] chromosome = new int[4];
     int fitnessScore = 0;
@@ -17,6 +19,10 @@ public class Individual {
 
     public void setFitnessScore(int aScore){
         fitnessScore = aScore;
+    }
+    
+    public String toString() {
+    	return (Arrays.toString(chromosome) + " Score: " + fitnessScore);
     }
 
 }

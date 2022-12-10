@@ -2,12 +2,10 @@ package GAOperatorFactory;
 
 import CrossoverOperators.CrossoverAlternate;
 import CrossoverOperators.ICrossover;
-import GAElements.Individual;
 import MutatationOperators.IMutation;
 import MutatationOperators.MutationRandom;
 import SelectionOperators.ISelection;
 import SelectionOperators.SelectionElite;
-import SelectionOperators.SelectionRandom;
 
 public class GANaiveOperatorFactory implements IGAOperatorFactory {
     /**
