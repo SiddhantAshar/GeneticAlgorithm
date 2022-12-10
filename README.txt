@@ -1,10 +1,10 @@
 1. How to compile and run the code
     As we have multiple-package & multiple-file structure, the compilation process involves multiple steps.
 
-    (((Step 1)) )
+    # Step 1
         From the terminal, navigate to the folder the project folder where the src/ folder is located.
 
-    (((Step 2)))
+    # Step 2
         Based on the OS, run the commands mentioned below for code compilation only
 
         For Windows:
@@ -15,7 +15,7 @@
             For Unix
                 javac -d bin/ $(find . -type f -name "*.java")
 
-    (((Step 3)))
+    # Step 3
         For executing the code, run the commands below
 
         For Windows:
@@ -113,7 +113,7 @@
 
     c.  __factory pattern__
 
-        # The implementaion of the Factory Pattern can be found in GeneticAlgorithm class in the src/GAMain/GeneticAlgorithm.java file.
+        # The implementation of the Factory Pattern can be found in GeneticAlgorithm class in the src/GAMain/GeneticAlgorithm.java file.
 		
         # Abstract factory pattern has been used as we need to create a family of related objects. 
 		
@@ -127,8 +127,5 @@
           See: Documentation for GACreator, GAOperatorFactory, SelectionOperators, CrossoverOperators, MutationOperators.
 
 
-5. Additional Information
 
-
-
-Git Link: https://github.com/SiddhantAshar/GeneticAlgorithm
+Git Hub Link: https://github.com/SiddhantAshar/GeneticAlgorithm
