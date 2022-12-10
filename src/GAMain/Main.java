@@ -7,9 +7,19 @@ import GACreator.GANaiveCreator;
 import GACreator.GARandomCreator;
 import GACreator.GAOptimisedCreator;
 import GACreator.GACreator;
-
+/**
+ * The class @code Main contains main method
+ *
+ */
 public class Main {
-
+	/**
+	 * The generationThreshold value is set to 100 and the random population is generated upto 20 for each generation.
+	 * GeneticAlgorithm is created using Naive, Optimised and Random Creator. The user can select the required creator.
+	 * The output consists of each Generation which has population and the Fitness score of each parents.
+	 * Later, the population fitness is calculated.
+	 * If the fitness score is found to be 0, then the perfect solution is found and the solution found at the particular generation is printed
+	 * Else, the perfect solution is not found and the fittest individual is printed.
+	 */
 	public static void main(String[] args) {
 		
 		int generationThreshold = 100;
