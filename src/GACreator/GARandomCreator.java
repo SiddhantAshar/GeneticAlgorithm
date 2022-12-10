@@ -1,13 +1,13 @@
 package GACreator;
 
 import GAMain.GeneticAlgorithm;
-import GAOperatorFactory.GARandomFactory;
+import GAOperatorFactory.GARandomOperatorFactory;
 
 public class GARandomCreator extends GACreator{
 
     @Override
     public GeneticAlgorithm createGeneticAlgorithm() {
-        operatorFactoryObject = new GARandomFactory();
+        operatorFactoryObject = new GARandomOperatorFactory();
         return new GeneticAlgorithm(operatorFactoryObject);
     }	
 }
