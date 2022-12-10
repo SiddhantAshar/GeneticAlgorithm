@@ -23,7 +23,7 @@ public class SelectionTournament implements ISelection{
             while(candidateParent1Index != candidateParent2Index && !selectedParentsIndex.contains(candidateParent2Index))
                 candidateParent2Index = (int)(Math.random()*10);
 
-            if (aPopulation.population.get(candidateParent1Index).fitnessScore < aPopulation.population.get(candidateParent2Index).fitnessScore){
+            if (aPopulation.population.get(candidateParent1Index).getFitnessScore() < aPopulation.population.get(candidateParent2Index).getFitnessScore()){
                 selectedParents[i] = aPopulation.population.get(candidateParent1Index);
                 selectedParentsIndex.add(candidateParent1Index);
             }

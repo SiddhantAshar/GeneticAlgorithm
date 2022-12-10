@@ -5,24 +5,34 @@ import GAElements.Individual;
 import GAElements.Population;
 import GACreator.GANaiveCreator;
 import GACreator.GARandomCreator;
+import GACreator.GAOptimisedCreator;
 import GACreator.GACreator;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		int generationThreashhold = 10;
+		int generationThreshold = 100;
 
 		Population population = Population.getInstance();
 
 		population.generateRandomPopulation(20);
 //		Fitness.calculateFitness(population);
 
-		GACreator gaCreator = new GANaiveCreator();
-		GeneticAlgorithm geneticAlgorithm = gaCreator.createGeneticAlgorithm();
+		// GA NAIVE
+//		GACreator gaNaiveCreator = new GANaiveCreator();
+//		GeneticAlgorithm geneticAlgorithm = gaNaiveCreator.createGeneticAlgorithm();
+
+		// GA OPTIMISED
+		GACreator gaOptimisedCreator = new GAOptimisedCreator();
+		GeneticAlgorithm geneticAlgorithm = gaOptimisedCreator.createGeneticAlgorithm();
+
+		// GA RANDOM
+//		GACreator gaRandomCreator = new GARandomCreator();
+//		GeneticAlgorithm geneticAlgorithm = gaRandomCreator.createGeneticAlgorithm();
 
 		int generation = 1;
-		while (generation <= generationThreashhold) {
+		while (generation <= generationThreshold) {
 			System.out.println("Generation: "+generation);
 			geneticAlgorithm.generateNextGeneration(population);
 
