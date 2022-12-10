@@ -1,8 +1,19 @@
 package CrossoverOperators;
 
 import GAElements.Individual;
-
+/**
+ * The class {@code CrossoverOperators} contains methods for performing random crossover between parents
+ *
+ */
 public class CrossoverRandom implements ICrossover{
+    /**
+     * The function {@code getChildren} contains logic for generating new children by random crossover between
+     * the parents.Consider a1 a2,b1 b2,c1 c2,d1 d2 as parents.
+     * So in random crossover any Parents will be selected to crossover, and generate children
+     * {@param theParents} of type Individual array.
+     * @returns children of the type individual array.
+     *
+     */
     @Override
     public Individual[] getChildren(Individual[] theParents) {
         Individual[] children = new Individual[4];

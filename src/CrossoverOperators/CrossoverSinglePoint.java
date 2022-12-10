@@ -2,8 +2,21 @@ package CrossoverOperators;
 
 import GAElements.Individual;
 
+/**
+ * The class {@code CrossoverOperators} contains methods for performing Single Point crossover between parents
+ *
+ */
+
 public class CrossoverSinglePoint implements ICrossover{
-	
+
+	/**
+	 * The function {@code getChildren} contains logic for generating new children by alternate crossover between
+	 * the parents.Consider a1 a2,b1 b2,c1 c2,d1 d2 as parents.
+	 * So in alternate crossover we will have children from parents a1 b1,c2 d2, a2 b2,a2 b1,c1 d1
+	 * {@param theParents} of type individual array.
+	 * @returns children of the type individual array.
+	 *
+	 */
 	int pivot;
     @Override
     public Individual[] getChildren(Individual[] theParents) {
