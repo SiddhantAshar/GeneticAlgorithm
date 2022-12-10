@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Individual {
-    public int [] chromosome = new int[4];
+    int [] chromosome = new int[4];
     int fitnessScore = -1;
 
     public Individual(int a, int b, int c, int d) {

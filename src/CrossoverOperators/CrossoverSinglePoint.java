@@ -21,7 +21,7 @@ public class CrossoverSinglePoint implements ICrossover{
     @Override
     public Individual[] getChildren(Individual[] theParents) {
     	
-    	pivot = theParents[0].chromosome.length/2;
+    	pivot = theParents[0].getChromosome().length/2;
     	
     	Individual[] children = new Individual[4];
         for (int i=0; i<children.length; i++) {
@@ -29,18 +29,21 @@ public class CrossoverSinglePoint implements ICrossover{
 		}
     	
     	for(int i=0; i<theParents.length/2; i++) { //1st + 3rd parent and 2nd + 4th parent
-    		for(int j=0; j<theParents[i].chromosome.length; j++) {
+    		int[] child1 = new int[4];
+			int[] child2 = new int[4];
+    		for(int j=0; j<theParents[i].getChromosome().length; j++) {
     			
     			if(j<pivot) {
-    				children[i].chromosome[j] = theParents[i].chromosome[j];
-        			children[i+2].chromosome[j] = theParents[i+2].chromosome[j];
+    				child1[j] = theParents[i].getChromosome()[j];
+        			child2[j] = theParents[i+2].getChromosome()[j];
     			} else {
-    				children[i].chromosome[j] = theParents[i+2].chromosome[j];
-        			children[i+2].chromosome[j] = theParents[i].chromosome[j];
+    				child1[j] = theParents[i+2].getChromosome()[j];
+    				child2[j] = theParents[i].getChromosome()[j];
     			}
     			
     		}
-    		
+    		children[i].setChromosome(child1);
+    		children[i+2].setChromosome(child2);
     	}
     	
         return children;

@@ -22,15 +22,23 @@ public class CrossoverRandom implements ICrossover{
 		}
         
         for(int i=0; i<theParents.length/2; i++) { //1st & 3rd parent + 2nd & 4th parent
-        	for(int j=0; j<theParents[i].chromosome.length; j++) {
+        	
+        	int[] child1 = new int[4];
+			int[] child2 = new int[4];
+			
+        	for(int j=0; j<theParents[i].getChromosome().length; j++) {
+        		
         		if(Math.random() < 0.5) {
-        			children[i].chromosome[j] = theParents[i].chromosome[j];
-        			children[i+2].chromosome[j] = theParents[i+2].chromosome[j];
-        		} else {
-        			children[i+2].chromosome[j] = theParents[i].chromosome[j];
-        			children[i].chromosome[j] = theParents[i+2].chromosome[j];
-        		}
+    				child1[j] = theParents[i].getChromosome()[j];
+        			child2[j] = theParents[i+2].getChromosome()[j];
+    			} else {
+    				child2[j] = theParents[i].getChromosome()[j];
+    				child1[j] = theParents[i+2].getChromosome()[j];
+    			}
         	}
+        	
+        	children[i].setChromosome(child1);
+        	children[i+2].setChromosome(child2);
         }
 
         return children;

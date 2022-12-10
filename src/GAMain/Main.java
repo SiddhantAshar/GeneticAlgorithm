@@ -37,7 +37,7 @@ public class Main {
 			geneticAlgorithm.generateNextGeneration(population);
 
 			population.printPopulation();
-			System.out.println("Population Fitness: " + population.populationFitness);
+			System.out.println("Population Fitness: " + population.getPopulationFitness());
 			System.out.println("--------------------------------------------------------");
  			if (geneticAlgorithm.stopAlgorithm)
 				break;
@@ -47,7 +47,7 @@ public class Main {
 		
 		System.out.println("=================== S O L U T I O N =====================");
 		
-		Individual fittestIndividual = population.population.get(0);
+		Individual fittestIndividual = population.getPopulation().get(0);
 		if(fittestIndividual.getFitnessScore() == 0) {
 			System.out.println("Perfect solution found.");
 			System.out.println("Solution found at generation: " + generation);

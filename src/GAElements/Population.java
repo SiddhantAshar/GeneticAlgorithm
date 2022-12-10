@@ -5,9 +5,9 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Population {
-    public ArrayList <Individual> population = new ArrayList<>();
+    ArrayList <Individual> population = new ArrayList<>();
 
-	public int populationFitness = -1;
+	int populationFitness = -1;
     
     private Population() {}
 

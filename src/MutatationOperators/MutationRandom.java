@@ -8,9 +8,11 @@ public class MutationRandom implements IMutation{
         boolean ifMutate = (int) (Math.random()*10) <= 5;
         if(ifMutate){
             int childrenIndex = (int) (Math.random()*100) % theChildren.length;
-            int chromosomeIndex = (int) (Math.random()*100) % theChildren[childrenIndex].chromosome.length;
+            int chromosomeIndex = (int) (Math.random()*100) % theChildren[childrenIndex].getChromosome().length;
             int value = (int) (Math.random()*100);
-            theChildren[childrenIndex].chromosome[chromosomeIndex] = value;
+            int[] childChromosome = theChildren[childrenIndex].getChromosome();
+            childChromosome[chromosomeIndex] = value;
+    		theChildren[childrenIndex].setChromosome(childChromosome);
         }
 
         return theChildren;
