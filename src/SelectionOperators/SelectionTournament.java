@@ -3,9 +3,38 @@ package SelectionOperators;
 import GAElements.Individual;
 import GAElements.Population;
 
+import java.util.ArrayList;
+
 public class SelectionTournament implements ISelection{
     @Override
     public Individual[] selectParents(Population aPopulation) {
-        return new Individual[0];
+        ArrayList<Integer> selectedParentsIndex = new ArrayList<>();
+        Individual[] selectedParents = new Individual[4];
+        int i=0;
+        while(i<4) {
+            int candidateParent1Index = -1;
+
+            do {
+                candidateParent1Index = (int) (Math.random() * 10);
+            } while (selectedParentsIndex.contains(candidateParent1Index));
+
+
+            int candidateParent2Index = -1;
+            while(candidateParent1Index != candidateParent2Index && !selectedParentsIndex.contains(candidateParent2Index))
+                candidateParent2Index = (int)(Math.random()*10);
+
+            if (aPopulation.population.get(candidateParent1Index).fitnessScore < aPopulation.population.get(candidateParent2Index).fitnessScore){
+                selectedParents[i] = aPopulation.population.get(candidateParent1Index);
+                selectedParentsIndex.add(candidateParent1Index);
+            }
+            else{
+                selectedParents[i] = aPopulation.population.get(candidateParent2Index);
+                selectedParentsIndex.add(candidateParent2Index);
+            }
+
+            i++;
+        }
+
+        return selectedParents;
     }
 }
