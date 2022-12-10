@@ -33,20 +33,20 @@ public class GeneticAlgorithm {
     	
         parents = selectionOperator.selectParents(aPopulation);
         
-        System.out.println("** Parents:");
-        for (int i=0; i<parents.length; i++) {
-        	System.out.println(parents[i]);
-        }
-        System.out.println("**");
+//        System.out.println("** Parents:");
+//        for (int i=0; i<parents.length; i++) {
+//        	System.out.println(parents[i]);
+//        }
+//        System.out.println("**");
         
         children = crossoverOperator.getChildren(parents);
         mutatedChildren = mutationOperator.mutate(children);
         
-        System.out.println("** Children:");
-        for (int i=0; i<mutatedChildren.length; i++) {
-        	System.out.println(mutatedChildren[i]);
-        }
-        System.out.println("**");
+//        System.out.println("** Children:");
+//        for (int i=0; i<mutatedChildren.length; i++) {
+//        	System.out.println(mutatedChildren[i]);
+//        }
+//        System.out.println("**");
         
         aPopulation.kill(mutatedChildren.length);
         aPopulation.add(mutatedChildren);
