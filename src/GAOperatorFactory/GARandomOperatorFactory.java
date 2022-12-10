@@ -7,7 +7,7 @@ import MutatationOperators.MutationRandom;
 import SelectionOperators.ISelection;
 import SelectionOperators.SelectionRandom;
 
-public class GARandomFactory implements IGAOperatorFactory {
+public class GARandomOperatorFactory implements IGAOperatorFactory {
     /**
      * The class {@code GANaiveOperatorFactory} contains methods for performing basic
      * {@param a, @param b}

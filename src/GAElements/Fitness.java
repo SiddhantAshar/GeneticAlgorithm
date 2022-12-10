@@ -3,16 +3,15 @@ package GAElements;
 import GAElements.Individual;
 import GAElements.Population;
 /**
- * The class {@code Fitness} has 4 variables a, b, c, d for
+ * The class {@code Fitness} has calculateFitness methods to calculate fitness score for a Population or an Individual
  *
  */
 public class Fitness {
 
     static int RHS = 100;
     /**
-     * The function {@code calculateFitness} contains logic for calculating the fitness of four variables of equation
-     * 2*a+3*b-(c*c)+d = 100.
-     * It calculates fitness of each individual.
+     * The function {@code calculateFitness} returns the fitness score of Individual by substituting Individual
+     * chromosome elements [a, b, c, d] in equation 2*a+3*b-(c*c)+d = 100.
      * {@param aIndividual}
      * @returns score(fitness) of every individual.
      *
@@ -32,22 +31,21 @@ public class Fitness {
         return score;
     }
     /**
-     * The function {@code calculateFitness} contains logic for calculating the fitness of Population.
-     * If the Fitness is zero then the generation stops as we have found the fittest Individual.
-     * Also it returns the total score of the generation
-     * {@param aPopulation}
-     * @returns score(fitness) of every population.
+     * The function {@code calculateFitness} returns the fitness score of Individual in the given population
+     * by substituting Individual chromosome elements [a, b, c, d] in equation 2*a+3*b-(c*c)+d = 100.
+     * {@param aIndividual}
+     * @returns score(fitness) of every individual in population.
      *
      */
 
     public static int calculateFitness(Population aPopulation){
         int total = 0;
-        for(Individual i: aPopulation.population){
+        for(Individual i: aPopulation.getPopulation()){
             int s = calculateFitness(i);
             
             total += s;
         }
-        total = total/aPopulation.population.size();
+        total = total/aPopulation.getPopulation().size();
         aPopulation.setPopulationFitness(total);
 
         return total;
