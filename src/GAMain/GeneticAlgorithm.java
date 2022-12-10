@@ -24,7 +24,7 @@ public class GeneticAlgorithm {
     boolean stopAlgorithm = false;
     /**
      * GeneticAlgorithm has a parameterized constructor
-     * @param aOperatorFactory is the object of interface IGAOperatorFactory
+     * {@param aOperatorFactory} is the object of interface IGAOperatorFactory
      * Here, Selection, Crossover and Mutation operators are selected for each respective operations
      *
      */
@@ -35,7 +35,7 @@ public class GeneticAlgorithm {
     }
 
     /**
-     * @param aPopulation is the object of class Population which is accepted by the method generateNextGeneration.
+     * {@param aPopulation} is the object of class Population which is accepted by the method generateNextGeneration.
      * The parents from the existing population are selected depending on the required selection operator.
      * Crossover of the selected parents is done depending on the required crossover operator to get the children.
      * Mutate operation is done depending on the mutation operator and the children are mutated.

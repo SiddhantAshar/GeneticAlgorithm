@@ -16,7 +16,7 @@ public class CrossoverSinglePoint implements ICrossover{
 	 * from each parent. The single point crossover will give children c1 and c2 from parents p1 and p2 as
 	 * c1 = [a1, b1, c2, d2] and c2 = [a2, b2, c1, d1].
 	 * {@param theParents} of type individual array.
-	 * @returns children of the type individual array.
+	 * {@returns children} of the type individual array.
 	 *
 	 */
 	int pivot;

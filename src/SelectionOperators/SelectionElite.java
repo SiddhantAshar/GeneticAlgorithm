@@ -4,16 +4,16 @@ import GAElements.Individual;
 import GAElements.IndividualComparator;
 import GAElements.Population;
 /**
- * The class @code SelectionElite contains method for selecting parents
+ * The class {@code SelectionElite} contains method for selecting parents
  *
  */
 public class SelectionElite implements ISelection {
     @Override
     /**
-     * @param aPopulation is the object of class Population which is accepted by the method selectParents.
+     * {@param aPopulation} is the object of class Population which is accepted by the method selectParents.
      * In this method, the population is sorted and first 4 individuals from population are selected as parents.
      * A and Individual [] array of all selected parents is returned.
-     * @return selectedParents of the type Individual array
+     * {@return selectedParents} of the type Individual array
      */
     public Individual[] selectParents(Population aPopulation) {
         Individual[] selectedParents = new Individual[4];

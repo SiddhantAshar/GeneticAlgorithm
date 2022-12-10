@@ -5,20 +5,20 @@ import GAElements.Population;
 
 import java.util.ArrayList;
 /**
- * The class @code SelectionTournament contains method for selecting parents using a tournament based selection
+ * The class {@code SelectionTournament} contains method for selecting parents using a tournament based selection
  *
  */
 public class SelectionTournament implements ISelection{
     @Override
 
     /**
-     * @param aPopulation is the object of class Population which is accepted by the method selectParents
+     * {@param aPopulation} is the object of class Population which is accepted by the method selectParents
      * In this method, 2 Individuals I1 and I2 are selected randomly using math.random function form the population.
      * Among I1 and I2 the fittest individual selected as parent. A and Individual [] array of all selected parents is
      * returned.
      *
      *
-     * @return selectedParents of the type Individual array
+     * {@return selectedParents} of the type Individual array
      */
     public Individual[] selectParents(Population aPopulation) {
         ArrayList<Integer> selectedParentsIndex = new ArrayList<>();

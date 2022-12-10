@@ -13,7 +13,7 @@ public class Fitness {
      * The function {@code calculateFitness} returns the fitness score of Individual by substituting Individual
      * chromosome elements [a, b, c, d] in equation 2*a+3*b-(c*c)+d = 100.
      * {@param aIndividual}
-     * @returns score(fitness) of every individual.
+     * {@return score(fitness)} of every individual.
      *
      */
     public static int calculateFitness(Individual aIndividual){
@@ -34,7 +34,7 @@ public class Fitness {
      * The function {@code calculateFitness} returns the fitness score of Individual in the given population
      * by substituting Individual chromosome elements [a, b, c, d] in equation 2*a+3*b-(c*c)+d = 100.
      * {@param aIndividual}
-     * @returns score(fitness) of every individual in population.
+     * {@return score(fitness)} of every individual in population.
      *
      */
 

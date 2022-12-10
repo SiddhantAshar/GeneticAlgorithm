@@ -43,7 +43,7 @@ public class Individual {
 
     /**
      * The method int {@code getFitnessScore} returns fitnessScore
-     * @returns fitnessScore
+     * @return fitnessScore
      */
 
     public int getFitnessScore() {
@@ -52,7 +52,7 @@ public class Individual {
 
     /**
      * The int {@code getChromosomes} method returns chromosomes
-     * @returns fitnessScore
+     * {@return fitnessScore}
      */
     public int[] getChromosome() {
 		return chromosome;

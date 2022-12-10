@@ -9,7 +9,7 @@ import java.util.Comparator;
 public class IndividualComparator implements Comparator<Individual> {
     /**
      * The method {@code compare} has parameters individual a and individual b
-     * @returns a.fitnessScore - b.fitnessScore
+     * {@return a.fitnessScore - b.fitnessScore}
      */
     public int compare(Individual a, Individual b) {
         return a.fitnessScore - b.fitnessScore;

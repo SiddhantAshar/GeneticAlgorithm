@@ -8,7 +8,7 @@ import GACreator.GARandomCreator;
 import GACreator.GAOptimisedCreator;
 import GACreator.GACreator;
 /**
- * The class @code Main contains main method
+ * The class {@code Main} contains main method
  *
  */
 public class Main {

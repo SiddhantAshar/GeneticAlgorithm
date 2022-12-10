@@ -11,7 +11,7 @@ public class CrossoverRandom implements ICrossover{
      * the parents.Consider p1, p2 as parents with chromosomes p1 = [a1, b1, c1, d1] and p2 = [a2, b2, c2, d2].
      * A random crossover will shuffle parents chromosome randomly and assign it to the children chromosome.
      * {@param theParents} of type Individual array.
-     * @returns children of the type individual array.
+     * {@return children} of the type individual array.
      *
      */
     @Override

@@ -1,5 +1,18 @@
+Group Members:
+1) Suramya Sureshbabu
+2) Shivani Girgune
+3) Jayant Rajdhar
+4) Sidhant Ashar (Student No.- 22250838)
+
+
 1. How to compile and run the code
     As we have multiple-package & multiple-file structure, the compilation process involves multiple steps.
+
+    # Step 0
+        In the src/GAMain/Main.java, select the Creator for the genetic algorithm.
+        The codes for 3 Creators are present in the file.
+        Uncomment the respective lines for selecting GANaiveCreator, GAOptimisedCreator or GARandomCreator. (either of the 3)
+        This will decide the behavior of the program.
 
     # Step 1
         From the terminal, navigate to the folder the project folder where the src/ folder is located.
@@ -109,6 +122,16 @@
           Strategy pattern has a class instantiating and usually give it strategy object that implements some behaviour
           Example: Interface ISelection is used for Selecting Parents and for Selection of Parents we have different
           behaviours like Elite Selection,Random Selection and Tournament Selection.
+          
+          The class GeneticAlgorithm (src/GAMain/GeneticAlgorithm.java) has 3 references, each one to store a 
+          behaviour for Selection, Crossover and Mutation respectively.
+          
+          We can change the behavior of the program at runtime by only changing the reference to the GACreator object in the src/GAMain/Main.java
+          e.g.-
+
+          GACreator gaCreator = new GAOptimisedCreator();
+          // GACreator gaCreator = new GANaiveCreator()
+          GeneticAlgorithm geneticAlgorithm = gaCreator.createGeneticAlgorithm();
 
 
     c.  __factory pattern__
