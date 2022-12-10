@@ -5,7 +5,7 @@ import GAElements.Population;
 
 import java.util.ArrayList;
 /**
- * The class @code SelectionTournament contains method for selecting parents
+ * The class @code SelectionTournament contains method for selecting parents using a tournament based selection
  *
  */
 public class SelectionTournament implements ISelection{
@@ -13,8 +13,9 @@ public class SelectionTournament implements ISelection{
 
     /**
      * @param aPopulation is the object of class Population which is accepted by the method selectParents
-     * In this method, 2 parents are selected randomly using math.random function form the Individual array
-     * then the fitness score is calculated. Later, stored in the selectedParentsIndex Arraylist.
+     * In this method, 2 Individuals I1 and I2 are selected randomly using math.random function form the population.
+     * Among I1 and I2 the fittest individual selected as parent. A and Individual [] array of all selected parents is
+     * returned.
      *
      *
      * @return selectedParents of the type Individual array

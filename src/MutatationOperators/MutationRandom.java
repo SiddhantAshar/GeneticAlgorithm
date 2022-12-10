@@ -8,10 +8,10 @@ import GAElements.Individual;
 public class MutationRandom implements IMutation{
     @Override
     /**
-     * @param theChildren is the object of class Individual which is accepted by the method mutate
-     * In this method, if the value generated from math.random function is less than or equal to 5,
-     * they are being considered as mutated children and they are not considered for the calculation of fitness.
-     * That particular chromosomeIndex is appended as childrenIndex.
+     * @param theChildren is the object of class Individual which is accepted by the method mutate.
+     * In this method,one child is selected for mutation with probability of 50%. If selected, any one number in the
+     * selected child chromosome is updated with a random number.
+     * A and Individual [] array of children is returned.
      *
      * @return theChildren of the type Individual array
      */

@@ -5,7 +5,7 @@ import GAElements.Population;
 
 import java.util.ArrayList;
 /**
- * The class @code SelectionRandom contains method for selecting parents
+ * The class @code SelectionRandom contains method for selecting parents using a random selection
  *
  */
 public class SelectionRandom implements ISelection {
@@ -13,9 +13,8 @@ public class SelectionRandom implements ISelection {
     @Override
     /**
      * @param aPopulation is the object of class Population which is accepted by the method selectParents
-     * In this method, 2 parents are selected randomly using math.random function form the Individual array
-     * and stored in the selectedParentsIndex Arraylist.
-     *
+     * In this method, Individual parents are selected randomly using math.random function form the population
+     * A and Individual [] array of all selected parents is returned.
      *
      * @return selectedParents of the type Individual array
      */

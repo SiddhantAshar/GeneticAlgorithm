@@ -11,19 +11,21 @@ import SelectionOperators.SelectionRandom;
  *
  */
 public class GARandomOperatorFactory implements IGAOperatorFactory {
-    /**
-     * The class @code GARandomOperatorFactory contains methods for performing random Selection, Crossover and Mutation functions
-     *
-     */
 
+    /**
+     * The getSelectionOperator method overrides the method present in IGAOperatorFactory interface.
+     * @return  returns new SelectionRandom object
+     */
     @Override
     public ISelection getSelectionOperator() {
         return new SelectionRandom();
     }
+
     /**
      * The getCrossoverOperator method overrides the method present in IGAOperatorFactory interface.
      * @return  returns new CrossoverRandom object
      */
+
     @Override
     public ICrossover getCrossoverOperator() {
         return new CrossoverRandom();

@@ -10,9 +10,9 @@ import GAElements.Population;
 public class SelectionElite implements ISelection {
     @Override
     /**
-     * @param aPopulation is the object of class Population which is accepted by the method selectParents
-     * In this method, the population is sorted and first 4 individuals are selected as parents from the Individual array
-     *
+     * @param aPopulation is the object of class Population which is accepted by the method selectParents.
+     * In this method, the population is sorted and first 4 individuals from population are selected as parents.
+     * A and Individual [] array of all selected parents is returned.
      * @return selectedParents of the type Individual array
      */
     public Individual[] selectParents(Population aPopulation) {

@@ -12,21 +12,22 @@ import SelectionOperators.SelectionTournament;
  *
  */
 public class GAOptimisedOperatorFactory implements IGAOperatorFactory {
+
     /**
      * The getSelectionOperator method overrides the method present in IGAOperatorFactory interface.
-     * @return  returns new SelectionRandom object
+     * @return  returns new SelectionTournament object
      */
-
-
     @Override
     public ISelection getSelectionOperator() {
         return new SelectionTournament();
     }
+
     /**
      * The getCrossoverOperator method overrides the method present in IGAOperatorFactory interface.
-     * @return  returns new CrossoverAlternate object
+     * @return  returns new CrossoverSinglePoint object
      */
     @Override
+
     public ICrossover getCrossoverOperator() {
         return new CrossoverSinglePoint();
     }
