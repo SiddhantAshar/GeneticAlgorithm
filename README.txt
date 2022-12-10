@@ -1,5 +1,31 @@
 1. How to compile and run the code
+	As we have multiple-package & multiple-file structure, the compilation process involves multiple steps.
 
+	(((Step 1)) )
+		From the terminal, navigate to the folder the project folder where the src/ folder is located.
+
+	(((Step 2)))
+		Based on the OS, run the commands mentioned below for code compilation only
+
+		For Windows:
+			dir *.java /s /b > tmp.txt
+			javac @tmp.txt -d bin
+			del tmp.txt
+
+		For Unix
+			javac -d bin/ $(find . -type f -name "*.java")
+
+	(((Step 3)))
+		For executing the code, run the commands below
+
+	For Windows:
+		java -classpath bin\ GAMain.Main
+
+	For Unix:
+		java -classpath bin/ GAMain.Main
+
+	The program should now execute and the solution should be printed on the terminal.
+	The same commands have been included in the "unix_compile_and_run.sh" and "windows_compile_and_run.bat" for the respective OS and can be run through the terminal.
 
 2. Terminologies Used
     # Individual
