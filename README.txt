@@ -97,9 +97,18 @@
 
     b.  __strategy pattern__
 
-        # Where it can be found?
-        # Pattern implemented name
-        # Why this pattern is used
+        # Strategy Pattern is implemented in SelectionOperators.java src/SelectionOperators, Mutation
+        src/MutationOperator and Crossover src/CrossoverOperator
+
+        # Strategy Pattern: Selection has different behaviour like Elite Selection,Random Selection and
+          Tournament Selection.
+          Crossover has different behaviour like Alternate Crossover,Random Crossover and SinglePoint Crossover.
+          Mutation has only Random Mutation.
+        # Strategy Pattern allows object to incorporate different behaviours or algorithms by creating different
+          interfaces.
+          Strategy pattern has a class instantiating and usually give it strategy object that implements some behaviour
+          Example: Interface ISelection is used for Selecting Parents and for Selection of Parents we have different
+          behaviours like Elite Selection,Random Selection and Tournament Selection.
 
 
     c.  __factory pattern__
