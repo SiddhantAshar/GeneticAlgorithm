@@ -1,8 +1,8 @@
 Group Members:
-1) Suramya Sureshbabu (Student No.- 22251388)
-2) Shivani Girgune (Student No.- 22250522)
-3) Jayant Rajdhar (Student No.- 22250298)
-4) Sidhant Ashar (Student No.- 22250838)
+1) Suramya Sureshbabu
+2) Shivani Girgune
+3) Jayant Rajdhar
+4) Sidhant Ashar
 
 
 1. How to compile and run the code
